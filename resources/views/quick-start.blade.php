@@ -15,7 +15,7 @@
 <meta name="generator" content="Dynamic API v1.0" />
 <meta property="og:title" content="Dynamic API - Empowering Frontend Developers" />
 <meta property="og:type" content="documentation" />
-<meta property="og:url" content="https://dynamic-api.kaushikavaghela.com/getting-started/" />
+<meta property="og:url" content="{{ env('APP_URL') }}/getting-started/" />
 <meta property="og:locale" content="en" />
 <meta property="og:description"
   content="Learn how to build, update, and manage APIs without backend or DevOps dependencies using Dynamic API." />
@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="description"
   content="Dynamic API enables frontend developers to create and manage APIs independently, reducing dependency on backend teams." />
-<meta property="og:image" content="https://dynamic-api.kaushikavaghela.com/og.jpg?v=1" />
+<meta property="og:image" content="{{ env('APP_URL') }}/og.jpg?v=1" />
 <meta property="og:image:alt" content="Create APIs effortlessly with Dynamic API" />
 
   <script>
@@ -991,7 +991,7 @@
 
                   <h2 id="quick-start">Quick Start</h2>
                   <h3 id="base-url">Base URL</h3>
-                  <p> <a href="javascript:void(0)">https://www.dynamic-api.kaushikavaghela.com/api</a> </p>
+                  <p> <a href="javascript:void(0)">{{ env('APP_URL') }}/api</a> </p>
                   <script>
                     (() => {
                       class StarlightTabsRestore extends HTMLElement {
@@ -1032,12 +1032,12 @@
                         <figure class="frame is-terminal not-content">
                           <figcaption class="header"><span class="title"></span><span class="sr-only">Terminal
                               window</span></figcaption>
-                              <pre data-language="sh"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">curl</span><span style="--0:#82AAFF;--1:#3C63B3"> -X POST </span><span style="--0:#ECC48D;--1:#3C63B3">https://www.dynamic-api.kaushikavaghela.com/api/electronic-devices/inventory</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-H </span><span style="--0:#82AAFF;--1:#3C63B3">'Content-Type: application/json'</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#82AAFF;--1:#3C63B3">-d </span><span style="--0:#ECC48D;--1:#3C63B3">'{"device_name":"Smartphone X200","brand":"TechBrand","price":799,"stock_quantity":50,"features":{"screen_size":"6.5 inches","battery":"4000 mAh","processor":"Octa-core"}}'</span></div></div></code></pre>
+                              <pre data-language="sh"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">curl</span><span style="--0:#82AAFF;--1:#3C63B3"> -X POST </span><span style="--0:#ECC48D;--1:#3C63B3">{{ env('APP_URL') }}/api/electronic-devices/inventory</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-H </span><span style="--0:#82AAFF;--1:#3C63B3">'Content-Type: application/json'</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#82AAFF;--1:#3C63B3">-d </span><span style="--0:#ECC48D;--1:#3C63B3">'{"device_name":"Smartphone X200","brand":"TechBrand","price":799,"stock_quantity":50,"features":{"screen_size":"6.5 inches","battery":"4000 mAh","processor":"Octa-core"}}'</span></div></div></code></pre>
                               
                               
                               <div class="copy">
                                 <button title="Copy to clipboard" data-copied="Copied!"
-                                    data-code="curl -X POST https://www.dynamic-api.kaushikavaghela.com/api/electronic-devices/inventory -H 'Content-Type: application/json' -d '{&quot;device_name&quot;:&quot;Smartphone X200&quot;,&quot;brand&quot;:&quot;TechBrand&quot;,&quot;price&quot;:799,&quot;stock_quantity&quot;:50,&quot;features&quot;:{&quot;screen_size&quot;:&quot;6.5 inches&quot;,&quot;battery&quot;:&quot;4000 mAh&quot;,&quot;processor&quot;:&quot;Octa-core&quot;}}'">
+                                    data-code="curl -X POST {{ env('APP_URL') }}/api/electronic-devices/inventory -H 'Content-Type: application/json' -d '{&quot;device_name&quot;:&quot;Smartphone X200&quot;,&quot;brand&quot;:&quot;TechBrand&quot;,&quot;price&quot;:799,&quot;stock_quantity&quot;:50,&quot;features&quot;:{&quot;screen_size&quot;:&quot;6.5 inches&quot;,&quot;battery&quot;:&quot;4000 mAh&quot;,&quot;processor&quot;:&quot;Octa-core&quot;}}'">
                                 </button>
                             </div>
                             
@@ -1058,9 +1058,9 @@
       <script type="module" src="js/ec.8zarh.js"></script>
       <figure class="frame is-terminal not-content">
         <figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption>
-        <pre data-language="sh"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">curl</span><span style="--0:#82AAFF;--1:#3C63B3"> -X PUT </span><span style="--0:#ECC48D;--1:#3C63B3">https://www.dynamic-api.kaushikavaghela.com/api/electronic-devices/inventory/1</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-H </span><span style="--0:#82AAFF;--1:#3C63B3">'Content-Type: application/json'</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#82AAFF;--1:#3C63B3">-d </span><span style="--0:#ECC48D;--1:#3C63B3">'{"device_name":"Smartphone X200 Pro","brand":"TechBrand","price":899,"stock_quantity":30,"features":{"screen_size":"6.7 inches","battery":"4500 mAh","processor":"Octa-core"}}'</span></div></div></code></pre>
+        <pre data-language="sh"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">curl</span><span style="--0:#82AAFF;--1:#3C63B3"> -X PUT </span><span style="--0:#ECC48D;--1:#3C63B3">{{ env('APP_URL') }}/api/electronic-devices/inventory/1</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-H </span><span style="--0:#82AAFF;--1:#3C63B3">'Content-Type: application/json'</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#82AAFF;--1:#3C63B3">-d </span><span style="--0:#ECC48D;--1:#3C63B3">'{"device_name":"Smartphone X200 Pro","brand":"TechBrand","price":899,"stock_quantity":30,"features":{"screen_size":"6.7 inches","battery":"4500 mAh","processor":"Octa-core"}}'</span></div></div></code></pre>
         <div class="copy">
-          <button title="Copy to clipboard" data-copied="Copied!" data-code="curl -X PUT https://www.dynamic-api.kaushikavaghela.com/api/electronic-devices/inventory/1 -H 'Content-Type: application/json' -d '{&quot;device_name&quot;:&quot;Smartphone X200 Pro&quot;,&quot;brand&quot;:&quot;TechBrand&quot;,&quot;price&quot;:899,&quot;stock_quantity&quot;:30,&quot;features&quot;:{&quot;screen_size&quot;:&quot;6.7 inches&quot;,&quot;battery&quot;:&quot;4500 mAh&quot;,&quot;processor&quot;:&quot;Octa-core&quot;}}'">
+          <button title="Copy to clipboard" data-copied="Copied!" data-code="curl -X PUT {{ env('APP_URL') }}/api/electronic-devices/inventory/1 -H 'Content-Type: application/json' -d '{&quot;device_name&quot;:&quot;Smartphone X200 Pro&quot;,&quot;brand&quot;:&quot;TechBrand&quot;,&quot;price&quot;:899,&quot;stock_quantity&quot;:30,&quot;features&quot;:{&quot;screen_size&quot;:&quot;6.7 inches&quot;,&quot;battery&quot;:&quot;4500 mAh&quot;,&quot;processor&quot;:&quot;Octa-core&quot;}}'">
           </button>
         </div>
       </figure>
@@ -1080,9 +1080,9 @@
       <script type="module" src="js/ec.8zarh.js"></script>
       <figure class="frame is-terminal not-content">
         <figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption>
-        <pre data-language="sh"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">curl</span><span style="--0:#82AAFF;--1:#3C63B3"> -X PATCH </span><span style="--0:#ECC48D;--1:#3C63B3">https://www.dynamic-api.kaushikavaghela.com/api/electronic-devices/inventory/1</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-H </span><span style="--0:#82AAFF;--1:#3C63B3">'Content-Type: application/json'</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#82AAFF;--1:#3C63B3">-d </span><span style="--0:#ECC48D;--1:#3C63B3">'{"price":850,"stock_quantity":25}'</span></div></div></code></pre>
+        <pre data-language="sh"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">curl</span><span style="--0:#82AAFF;--1:#3C63B3"> -X PATCH </span><span style="--0:#ECC48D;--1:#3C63B3">{{ env('APP_URL') }}/api/electronic-devices/inventory/1</span><span style="--0:#D6DEEB;--1:#403F53"> </span><span style="--0:#82AAFF;--1:#3C63B3">-H </span><span style="--0:#82AAFF;--1:#3C63B3">'Content-Type: application/json'</span><span style="--0:#82AAFF;--1:#3C63B3"> </span><span style="--0:#82AAFF;--1:#3C63B3">-d </span><span style="--0:#ECC48D;--1:#3C63B3">'{"price":850,"stock_quantity":25}'</span></div></div></code></pre>
         <div class="copy">
-          <button title="Copy to clipboard" data-copied="Copied!" data-code="curl -X PATCH https://www.dynamic-api.kaushikavaghela.com/api/electronic-devices/inventory/1 -H 'Content-Type: application/json' -d '{&quot;price&quot;:850,&quot;stock_quantity&quot;:25}'">
+          <button title="Copy to clipboard" data-copied="Copied!" data-code="curl -X PATCH {{ env('APP_URL') }}/api/electronic-devices/inventory/1 -H 'Content-Type: application/json' -d '{&quot;price&quot;:850,&quot;stock_quantity&quot;:25}'">
           </button>
         </div>
       </figure>
@@ -1102,9 +1102,9 @@
       <script type="module" src="js/ec.8zarh.js"></script>
       <figure class="frame is-terminal not-content">
         <figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption>
-        <pre data-language="sh"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">curl</span><span style="--0:#82AAFF;--1:#3C63B3"> -X GET </span><span style="--0:#ECC48D;--1:#3C63B3">https://www.dynamic-api.kaushikavaghela.com/api/electronic-devices/inventory?limit=10&page=1</span></div></div></code></pre>
+        <pre data-language="sh"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">curl</span><span style="--0:#82AAFF;--1:#3C63B3"> -X GET </span><span style="--0:#ECC48D;--1:#3C63B3">{{ env('APP_URL') }}/api/electronic-devices/inventory?limit=10&page=1</span></div></div></code></pre>
         <div class="copy">
-          <button title="Copy to clipboard" data-copied="Copied!" data-code="curl -X GET https://www.dynamic-api.kaushikavaghela.com/api/electronic-devices/inventory?limit=10&page=1">
+          <button title="Copy to clipboard" data-copied="Copied!" data-code="curl -X GET {{ env('APP_URL') }}/api/electronic-devices/inventory?limit=10&page=1">
           </button>
         </div>
       </figure>
@@ -1124,9 +1124,9 @@
       <script type="module" src="js/ec.8zarh.js"></script>
       <figure class="frame is-terminal not-content">
         <figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption>
-        <pre data-language="sh"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">curl</span><span style="--0:#82AAFF;--1:#3C63B3"> -X GET </span><span style="--0:#ECC48D;--1:#3C63B3">https://www.dynamic-api.kaushikavaghela.com/api/electronic-devices/inventory/1</span></div></div></code></pre>
+        <pre data-language="sh"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">curl</span><span style="--0:#82AAFF;--1:#3C63B3"> -X GET </span><span style="--0:#ECC48D;--1:#3C63B3">{{ env('APP_URL') }}/api/electronic-devices/inventory/1</span></div></div></code></pre>
         <div class="copy">
-          <button title="Copy to clipboard" data-copied="Copied!" data-code="curl -X GET https://www.dynamic-api.kaushikavaghela.com/api/electronic-devices/inventory/1">
+          <button title="Copy to clipboard" data-copied="Copied!" data-code="curl -X GET {{ env('APP_URL') }}/api/electronic-devices/inventory/1">
           </button>
         </div>
       </figure>
@@ -1146,9 +1146,9 @@
       <script type="module" src="js/ec.8zarh.js"></script>
       <figure class="frame is-terminal not-content">
         <figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption>
-        <pre data-language="sh"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">curl</span><span style="--0:#82AAFF;--1:#3C63B3"> -X DELETE </span><span style="--0:#ECC48D;--1:#3C63B3">https://www.dynamic-api.kaushikavaghela.com/api/electronic-devices/inventory/1</span></div></div></code></pre>
+        <pre data-language="sh"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">curl</span><span style="--0:#82AAFF;--1:#3C63B3"> -X DELETE </span><span style="--0:#ECC48D;--1:#3C63B3">{{ env('APP_URL') }}/api/electronic-devices/inventory/1</span></div></div></code></pre>
         <div class="copy">
-          <button title="Copy to clipboard" data-copied="Copied!" data-code="curl -X DELETE https://www.dynamic-api.kaushikavaghela.com/api/electronic-devices/inventory/1">
+          <button title="Copy to clipboard" data-copied="Copied!" data-code="curl -X DELETE {{ env('APP_URL') }}/api/electronic-devices/inventory/1">
           </button>
         </div>
       </figure>

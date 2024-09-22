@@ -15,7 +15,7 @@
   <meta name="generator" content="Dynamic API v1.0" />
   <meta property="og:title" content="Dynamic API - Get Started" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://dynamic-api.kaushikavaghela.com/getting-started/" />
+  <meta property="og:url" content="{{ env('APP_URL') }}/getting-started/" />
   <meta property="og:locale" content="en" />
   <meta property="og:description"
     content="Learn how to quickly start building APIs without backend dependencies using Dynamic API." />
@@ -23,7 +23,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="description"
     content="Learn how Dynamic API enables frontend developers to create and manage APIs with ease." />
-  <meta property="og:image" content="https://dynamic-api.kaushikavaghela.com/og.jpg?v=1" />
+  <meta property="og:image" content="{{ env('APP_URL') }}/og.jpg?v=1" />
   <meta property="og:image:alt" content="Easily manage APIs with Dynamic API" />
 
   <script>
