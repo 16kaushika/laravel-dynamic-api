@@ -784,6 +784,7 @@
     </nav>
     <div class="main-frame astro-25lioaeu">
       <div class="lg:sl-flex astro-yl67c4br">
+        
         <aside class="right-sidebar-container astro-yl67c4br">
           <div class="right-sidebar astro-yl67c4br">
             <div class="lg:sl-hidden astro-3ue6hxa3">
@@ -805,6 +806,21 @@
                         <li class="astro-zu3ccwit" style="--depth: 0">
                           <a href="#_top" class="astro-zu3ccwit" style="--depth: 0">
                             <span class="astro-zu3ccwit" style="--depth: 0">Overview</span>
+                          </a>
+                        </li>
+                        <li class="astro-zu3ccwit" style="--depth: 0">
+                          <a href="#problem" class="astro-zu3ccwit" style="--depth: 0">
+                            <span class="astro-zu3ccwit" style="--depth: 0">Problem</span>
+                          </a>
+                        </li>
+                        <li class="astro-zu3ccwit" style="--depth: 0">
+                          <a href="#solution" class="astro-zu3ccwit" style="--depth: 0">
+                            <span class="astro-zu3ccwit" style="--depth: 0">Solution</span>
+                          </a>
+                        </li>
+                        <li class="astro-zu3ccwit" style="--depth: 0"></li>
+                          <a href="#why-dynamic-api" class="astro-zu3ccwit" style="--depth: 0">
+                            <span class="astro-zu3ccwit" style="--depth: 0">Why Dynamic API</span>
                           </a>
                         </li>
                         <li class="astro-zu3ccwit" style="--depth: 0">
@@ -830,11 +846,27 @@
                         </a>
                       </li>
                       <li class="astro-zu3ccwit" style="--depth: 0">
+                        <a href="#problem" class="astro-zu3ccwit" style="--depth: 0">
+                          <span class="astro-zu3ccwit" style="--depth: 0">Problem</span>
+                        </a>
+                      </li>
+                      <li class="astro-zu3ccwit" style="--depth: 0">
+                        <a href="#solution" class="astro-zu3ccwit" style="--depth: 0">
+                          <span class="astro-zu3ccwit" style="--depth: 0">Solution</span>
+                        </a>
+                      </li>
+                      <li class="astro-zu3ccwit" style="--depth: 0"></li>
+                        <a href="#why-dynamic-api" class="astro-zu3ccwit" style="--depth: 0">
+                          <span class="astro-zu3ccwit" style="--depth: 0">Why Dynamic API</span>
+                        </a>
+                      </li>
+                      
+                      <li class="astro-zu3ccwit" style="--depth: 0">
                         <a href="#features-usage" class="astro-zu3ccwit" style="--depth: 0">
                           <span class="astro-zu3ccwit" style="--depth: 0">Features & Usage</span>
                         </a>
                       </li>
-
+                     
                     </ul>
                   </nav>
                 </starlight-toc>
@@ -860,6 +892,35 @@
                     fosters quick development cycles and ensures that frontend developers can adjust the API logic as
                     per their evolving requirements. This makes it a valuable tool for modern development workflows.
                   </p>
+                  <h3 id="problem">Problem</h3>
+                  <p>
+                    Frontend developers often face delays in development cycles due to dependencies on backend teams for API management. This creates bottlenecks, where frontend teams must wait for backend teams to create, update, or modify APIs. Additionally, managing infrastructure changes or API deployments often requires coordination with DevOps teams, leading to further delays. These dependencies on both backend and DevOps teams can slow down the process of making necessary changes, limiting flexibility and agility in development.
+                  </p>
+                  <h3 id="solution">Solution</h3>
+                  <p>
+                    Dynamic API provides a flexible solution by empowering frontend developers to manage APIs independently, reducing the dependency on both backend and DevOps teams. Frontend developers can dynamically create, update, retrieve, and delete data through structured HTTP requests, without waiting for backend or DevOps support. This decouples frontend teams from the need for backend API changes or infrastructure management, enabling quicker adjustments to API logic. As a result, it streamlines the development process by allowing developers to work autonomously, ensuring faster iterations and a more efficient workflow.
+                  </p>
+                  <h3 id="why-dynamic-api">Why Dynamic API</h3>
+                  <ul>
+                    <li>
+                      <strong>Flexibility: </strong> Frontend developers can adjust API logic without waiting for backend or DevOps teams, accelerating the development process.
+                    </li>
+                    <li>
+                      <strong>Platform Compatibility: </strong> Supports integration with popular platforms such as Android, iOS, Flutter, React Native, Angular, and React, making it widely usable.
+                    </li>
+                    <li>
+                      <strong>Efficient Development: </strong> Reduces dependencies, enabling frontend developers to manage APIs independently, fostering quicker development cycles.
+                    </li>
+                    <li>
+                      <strong>Comprehensive CRUD Operations: </strong> Offers complete control over data with POST, PUT, PATCH, GET, and DELETE requests for easy management of resources.
+                    </li>
+                    <li>
+                      <strong>Reduced DevOps Dependency: </strong> Minimizes the need for DevOps intervention in API infrastructure management, allowing for smoother and faster deployments.
+                    </li>
+                    <li>
+                      <strong>Scalability: </strong> Adapts to evolving project requirements, making it an ideal tool for fast-paced and modern development environments.
+                    </li>
+                  </ul>
                   <h3 id="features-usage">Features & Usage</h3>
                   <ul>
                     <li>
@@ -880,8 +941,7 @@
                     <li>
                       <strong>Delete Data (DELETE):</strong> Remove a specific object by ID.
                     </li>
-                  </ul>
-
+                  </ul> 
                   <br>
                 </div>
                 <footer class="sl-flex astro-flxlqajp">
