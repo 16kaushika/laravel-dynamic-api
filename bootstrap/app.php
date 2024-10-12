@@ -15,6 +15,9 @@ return Application::configure(basePath: dirname(__DIR__))
     $middleware->validateCsrfTokens(
         except: ['api/*'],  // Exclude API routes from CSRF protection
     );
+    
+    // Add the custom CORS middleware
+    $middleware->add(CustomCors::class);
 })
 ->withExceptions(function (Exceptions $exceptions) {
         //
