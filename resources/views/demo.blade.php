@@ -101,6 +101,9 @@
 
 
     <div class="container">
+        <marquee behavior="scroll" direction="left" style="color: red ; font-weight: bold;">
+          Note: The example data for "electronic-devices" and "Inventory" will be deleted every 10 minutes.
+        </marquee>
         <h1 class="text-center mb-4">Dynamic API CRUD</h1>
         <div class="d-flex justify-content-between align-items-center mb-3">
             <button class="btn btn-primary" data-toggle="modal" data-target="#createInventoryModal"

@@ -703,6 +703,9 @@ d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h1
             <span class="sr-only astro-3gjrqrfo"> Dynamic API </span>
           </a>
         </div>
+        <marquee behavior="scroll" direction="left" style="color: red ; font-weight: bold;">
+          Note: Dynamic-API data is automatically clears data every 7 days to ensure smooth performance. Be sure to back up any important information!
+        </marquee>
       </div>
     </header>
     <nav class="sidebar astro-25lioaeu" aria-label="Main">
