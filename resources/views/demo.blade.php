@@ -103,148 +103,148 @@
     <div class="container">
         <marquee behavior="scroll" direction="left" style="color: red ; font-weight: bold;">
           Note: The example data for "electronic-devices" and "Inventory" will be deleted every 10 minutes.
-        </marquee>
-        <h1 class="text-center mb-4">Dynamic API CRUD</h1>
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#createInventoryModal"
-                id="add-inventory">Add Inventory</button>
-            <!-- Tooltip element (hidden by default) -->
-            <div id="jumping-tooltip" class="jumping-tooltip" style="display:none;">Click here to add inventory!</div>
+      </marquee>
+      <h1 class="text-center mb-4">Dynamic API CRUD</h1>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#createInventoryModal"
+        id="add-inventory">Add Inventory</button>
+        <!-- Tooltip element (hidden by default) -->
+        <div id="jumping-tooltip" class="jumping-tooltip" style="display:none;">Click here to add inventory!</div>
+        <div>
             <div>
-                <div>
-                    <label for="project-name" class="font-weight-bold">Project Name:</label>
-                    <input type="text" id="project-name" placeholder="Project Name" value="electronic-devices"
-                        class="form-control d-inline-block text-center w-auto ml-2 " disabled>
-                </div>
-
-                <div class="mt-2">
-                    <label for="module-name" class="font-weight-bold">Module Name:</label>
-                    <input type="text" id="module-name" placeholder="Module Name" value="inventory"
-                        class="form-control d-inline-block text-center w-auto ml-2" disabled>
-                </div>
-
-                <!-- <button id="sync-btn" class="btn btn-secondary">Sync</button> -->
+                <label for="project-name" class="font-weight-bold">Project Name:</label>
+                <input type="text" id="project-name" placeholder="Project Name" value="electronic-devices"
+                class="form-control d-inline-block text-center w-auto ml-2 " disabled>
             </div>
-        </div>
 
-        <div id="loader" style="display: none; text-align: center; margin: 20px;">
-            <div class="spinner-border text-primary" role="status">
-                <span class="sr-only">Loading...</span>
+            <div class="mt-2">
+                <label for="module-name" class="font-weight-bold">Module Name:</label>
+                <input type="text" id="module-name" placeholder="Module Name" value="inventory"
+                class="form-control d-inline-block text-center w-auto ml-2" disabled>
             </div>
-        </div>
 
-        <table id="inventoryTable" class="display" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Device Name</th>
-                    <th>Price</th>
-                    <th>Brand</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </div>
-
-    <!-- Create Product Modal -->
-    <div class="modal fade" id="createInventoryModal" tabindex="-1" role="dialog"
-        aria-labelledby="createInventoryModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="createInventoryModalLabel">Create Inventory</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Note -->
-                    <div class="alert alert-info mt-3">
-                        <p class="mb-0">
-                            <strong>Note:</strong> The payload structure shown in this form is a basic example.
-                            You can always modify the object as needed to fit your requirements. For more details,
-                            or to experiment with the API request, you can try using the <code>curl</code> request,
-                            which can be found
-                            <a href="index2.html" target="_blank">here</a>.
-                        </p>
-                    </div>
-                    <form id="create-invet-form">
-                        <div class="form-group">
-                            <label for="create-device-name">Device Name:</label>
-                            <input type="text" class="form-control" id="create-device-name" name="device_name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="create-brand">Brand:</label>
-                            <input type="text" class="form-control" id="create-brand" name="brand" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="create-price">Price:</label>
-                            <input type="number" class="form-control" id="create-price" name="price" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Create Inventory</button>
-                    </form>
-                </div>
-            </div>
+            <!-- <button id="sync-btn" class="btn btn-secondary">Sync</button> -->
         </div>
     </div>
 
-
-    <!-- Update Product Modal -->
-    <div class="modal fade" id="updateProductModal" tabindex="-1" role="dialog"
-        aria-labelledby="updateProductModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="updateProductModalLabel">Update Product</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="update-product-form">
-                        <input type="hidden" id="update-id">
-
-                        <div class="form-group">
-                            <label for="update-device-name">Device Name:</label>
-                            <input type="text" class="form-control" id="update-device-name" name="device_name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="update-brand">Brand:</label>
-                            <input type="text" class="form-control" id="update-brand" name="brand" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="update-price">Price:</label>
-                            <input type="number" class="form-control" id="update-price" name="price" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Update Product</button>
-                    </form>
-                </div>
-            </div>
+    <div id="loader" style="display: none; text-align: center; margin: 20px;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
     </div>
 
-    <!-- View Product Modal -->
-    <div class="modal fade" id="viewProductModal" tabindex="-1" role="dialog" aria-labelledby="viewProductModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="viewProductModalLabel">View Module</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <ul id="view-product-details" class="list-group">
-                        <!-- Key-value pairs will be added here dynamically -->
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+    <table id="inventoryTable" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Device Name</th>
+                <th>Price</th>
+                <th>Brand</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<!-- Create Product Modal -->
+<div class="modal fade" id="createInventoryModal" tabindex="-1" role="dialog"
+aria-labelledby="createInventoryModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="createInventoryModalLabel">Create Inventory</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- Note -->
+            <div class="alert alert-info mt-3">
+                <p class="mb-0">
+                    <strong>Note:</strong> The payload structure shown in this form is a basic example.
+                    You can always modify the object as needed to fit your requirements. For more details,
+                    or to experiment with the API request, you can try using the <code>curl</code> request,
+                    which can be found
+                    <a href="index2.html" target="_blank">here</a>.
+                </p>
             </div>
+            <form id="create-invet-form">
+                <div class="form-group">
+                    <label for="create-device-name">Device Name:</label>
+                    <input type="text" class="form-control" id="create-device-name" name="device_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="create-brand">Brand:</label>
+                    <input type="text" class="form-control" id="create-brand" name="brand" required>
+                </div>
+                <div class="form-group">
+                    <label for="create-price">Price:</label>
+                    <input type="number" class="form-control" id="create-price" name="price" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Inventory</button>
+            </form>
         </div>
     </div>
+</div>
+</div>
+
+
+<!-- Update Product Modal -->
+<div class="modal fade" id="updateProductModal" tabindex="-1" role="dialog"
+aria-labelledby="updateProductModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="updateProductModalLabel">Update Product</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form id="update-product-form">
+                <input type="hidden" id="update-id">
+
+                <div class="form-group">
+                    <label for="update-device-name">Device Name:</label>
+                    <input type="text" class="form-control" id="update-device-name" name="device_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="update-brand">Brand:</label>
+                    <input type="text" class="form-control" id="update-brand" name="brand" required>
+                </div>
+                <div class="form-group">
+                    <label for="update-price">Price:</label>
+                    <input type="number" class="form-control" id="update-price" name="price" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Product</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- View Product Modal -->
+<div class="modal fade" id="viewProductModal" tabindex="-1" role="dialog" aria-labelledby="viewProductModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="viewProductModalLabel">View Module</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <ul id="view-product-details" class="list-group">
+                <!-- Key-value pairs will be added here dynamically -->
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+</div>
 
 <footer style="justify-content: center;">
     {{ env('AUTHOR_NAME') }} | {{ env('AUTHOR_EMAIL') }}
@@ -253,24 +253,24 @@
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script>
-        let projectName = 'electronic-devices';
-        let moduleName = 'inventory';
-        let baseUrl = '{{ env('APP_URL') }}' + `/api/${projectName}/${moduleName}`;
-        let inventoryTable;
+<script>
+    let projectName = 'electronic-devices';
+    let moduleName = 'inventory';
+    let baseUrl = '{{ env('APP_URL') }}' + `/api/${projectName}/${moduleName}`;
+    let inventoryTable;
 
-        $(document).ready(function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const route = urlParams.get('route');
+    $(document).ready(function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const route = urlParams.get('route');
 
             // Show jumping tooltip if 'add-data' route param is present
-            if (route === 'add-data') {
-                showAddTooltip();
-            }
+        if (route === 'add-data') {
+            showAddTooltip();
+        }
             // Show tooltip for "Add Inventory" button
-            function showAddTooltip() {
-                const addInventoryBtn = document.getElementById('add-inventory');
-                const tooltip = document.getElementById('jumping-tooltip');
+        function showAddTooltip() {
+            const addInventoryBtn = document.getElementById('add-inventory');
+            const tooltip = document.getElementById('jumping-tooltip');
 
                 tooltip.innerHTML = 'Click here to add inventory!'; // Set tooltip content
                 addInventoryBtn.classList.add('highlighted'); // Highlight the button
@@ -351,8 +351,8 @@
 
             inventoryTable = $('#inventoryTable').DataTable({
                 columns: [
-                    {
-                        data: 'device_name',
+                {
+                    data: 'device_name',
                         defaultContent: '<i>Not available</i>'  // Fallback content if 'device_name' is missing
                     },
                     {
@@ -367,15 +367,15 @@
                         data: null,
                         render: function (data, type, row) {
                             return `
-                    <div class="btn-group" role="group">
-                        <button class="btn btn-warning btn-sm update-button" data-id="${data.id || ''}">Update</button>
-                        <button class="btn btn-danger btn-sm delete-button" data-id="${data.id || ''}">Delete</button>
-                        <button class="btn btn-info btn-sm view-button" data-id="${data.id || ''}">View</button>
-                    </div>
-                `;
+                            <div class="btn-group" role="group">
+                            <button class="btn btn-warning btn-sm update-button" data-id="${data.id || ''}">Update</button>
+                            <button class="btn btn-danger btn-sm delete-button" data-id="${data.id || ''}">Delete</button>
+                            <button class="btn btn-info btn-sm view-button" data-id="${data.id || ''}">View</button>
+                            </div>
+                            `;
                         }
                     }
-                ]
+                    ]
             });
 
             // Handle Create Inventory Form Submission
@@ -394,14 +394,14 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ device_name, brand, price })
                 })
-                    .then(response => response.json())
-                    .then(data => {
-                        $('#createInventoryModal').modal('hide');
-                        loadProducts();
-                    })
-                    .finally(() => {
-                        hideLoader(createButton);
-                    });
+                .then(response => response.json())
+                .then(data => {
+                    $('#createInventoryModal').modal('hide');
+                    loadProducts();
+                })
+                .finally(() => {
+                    hideLoader(createButton);
+                });
             });
 
             // Handle Update Form Submission
@@ -421,28 +421,28 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ device_name, price, brand })
                 })
-                    .then(response => response.json())
-                    .then(data => {
-                        $('#updateProductModal').modal('hide');
-                        loadProducts();
-                    })
-                    .finally(() => {
-                        hideLoader(updateButton);
-                    });
+                .then(response => response.json())
+                .then(data => {
+                    $('#updateProductModal').modal('hide');
+                    loadProducts();
+                })
+                .finally(() => {
+                    hideLoader(updateButton);
+                });
             });
 
             // Handle Update Button Click
             $('#inventoryTable tbody').on('click', '.update-button', function () {
                 const id = $(this).data('id');
                 fetch(`${baseUrl}/${id}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        $('#update-id').val(data.data.id);
-                        $('#update-device-name').val(data.data.device_name);
-                        $('#update-price').val(data.data.price);
-                        $('#update-brand').val(data.data.brand);
-                        $('#updateProductModal').modal('show');
-                    });
+                .then(response => response.json())
+                .then(data => {
+                    $('#update-id').val(data.data.id);
+                    $('#update-device-name').val(data.data.device_name);
+                    $('#update-price').val(data.data.price);
+                    $('#update-brand').val(data.data.brand);
+                    $('#updateProductModal').modal('show');
+                });
             });
 
             // Handle Delete Button Click
@@ -454,13 +454,13 @@
                     showLoader(deleteButton);
 
                     fetch(`${baseUrl}/${id}`, { method: 'DELETE' })
-                        .then(response => response.json())
-                        .then(data => {
-                            loadProducts();
-                        })
-                        .finally(() => {
-                            hideLoader(deleteButton);
-                        });
+                    .then(response => response.json())
+                    .then(data => {
+                        loadProducts();
+                    })
+                    .finally(() => {
+                        hideLoader(deleteButton);
+                    });
                 }
             });
 
@@ -473,9 +473,9 @@
             // Fetch product details from the API and display them in the modal
             function fetchProductDetails(id) {
                 fetch(`${baseUrl}/${id}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log("data.datadata.data", data.data);
+                .then(response => response.json())
+                .then(data => {
+                    console.log("data.datadata.data", data.data);
                         const productDetails = data.data; // Assuming the API response has a 'data' field with the product details
                         const productDetailsList = $('#view-product-details');
 
@@ -497,9 +497,9 @@
                         // Show the modal
                         $('#viewProductModal').modal('show');
                     })
-                    .catch(error => {
-                        console.error('Error fetching product details:', error);
-                    });
+                .catch(error => {
+                    console.error('Error fetching product details:', error);
+                });
             }
 
             // Load Inventory Data into Table
@@ -509,23 +509,28 @@
                 $('#inventoryTable').hide();
 
 
-                fetch(`${baseUrl}?limit=100&page=1`)
-                    .then(response => response.json())
-                    .then(data => {
-                        $('#loader').hide()
-                        inventoryTable.clear();
-                        const filterData = (data.data.results || []).filter(item => {
-                            const { device_name, brand, price } = item;
-                            return device_name || brand || price;
-                        })
-                        if (filterData.length > 0) {
+                fetch(`${baseUrl}?limit=100&page=1`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',  
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    $('#loader').hide()
+                    inventoryTable.clear();
+                    const filterData = (data.data.results || []).filter(item => {
+                        const { device_name, brand, price } = item;
+                        return device_name || brand || price;
+                    })
+                    if (filterData.length > 0) {
                             // Add data to the table
-                            inventoryTable.rows.add(filterData.map(item => ({
-                                device_name: item.device_name || 'NA',
-                                brand: item.brand || 'NA',
-                                price: item.price !== undefined && item.price !== null ? item.price : 'NA',
-                                id: item.id
-                            })));
+                        inventoryTable.rows.add(filterData.map(item => ({
+                            device_name: item.device_name || 'NA',
+                            brand: item.brand || 'NA',
+                            price: item.price !== undefined && item.price !== null ? item.price : 'NA',
+                            id: item.id
+                        })));
                             inventoryTable.draw(); // Render the table
                             $('#inventoryTable').show(); // Show the table after rendering
                         } else {
@@ -561,10 +566,10 @@
                         $('#loader').hide();
                         $('#inventoryTable').show(); //
                     });
-            }
+                }
 
             // Show loader on button
-            function showLoader(button) {
+                function showLoader(button) {
                 button.prop('disabled', true); // Disable the button
                 button.html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...');
             }
