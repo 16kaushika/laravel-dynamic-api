@@ -14,17 +14,30 @@ class DataHubController extends Controller
         /* Extract data from the request */
         $data = $request->all();
 
-        /* Find or create the existing record in DataHub */
-        $existingRecord = DataHub::updateOrCreate(
-            [
+        /* Check if the module already exists for this project */
+        $existingRecord = DataHub::where('project', $project)
+        ->where('module', $module)
+        ->first();
+
+        /* Get the count of modules for this project */
+        $moduleCount = DataHub::where('project', $project)->count();
+
+        /* Check if adding a new module would exceed the limit */
+        if ($moduleCount >= 10 && !$existingRecord) {
+            return response()->json([
+                'status' => 400,
+                'message' => 'A project cannot have more than 10 modules.',
+            ], 400);
+        }
+
+        /* If the module already exists, proceed without error */
+        if (!$existingRecord && $moduleCount < 10) {
+            /* Create the new record in DataHub */
+            $existingRecord = DataHub::create([
                 'project' => $project,
                 'module' => $module
-            ],
-            [
-                'project' => $project,
-                'module' => $module
-            ]
-        );
+            ]);
+        }
 
         /* Get the count of related MetaData records for the project */
         $foundDataLength = MetaData::where('project_id', $existingRecord->id)->count();
@@ -327,15 +340,83 @@ class DataHubController extends Controller
                 }
 
                 return response()->json([
-                    'status' => 404,
-                    'message' => 'Rrecord not found',
-                ], 404); /* Status code 404 if MetaData not found */
+                    'status' => 400,
+                    'message' => 'Record not found',
+                ], 400); /* Status code 400 if MetaData not found */
             }
 
             return response()->json([
-                'status' => 404,
+                'status' => 400,
                 'message' => 'Project or module not found',
-            ], 404); /* Status code 404 if DataHub not found */
+            ], 400); /* Status code 400 if DataHub not found */
+
+        } catch (\Exception $e) {
+            /* Handle any exceptions */
+            return response()->json([
+                'status' => 500,
+                'message' => 'Internal Server Error',
+                'error' => $e->getMessage()
+            ], 500); /* Status code 500 for internal server error */
+        }
+    }
+
+    public function deleteModule($project, $module) {
+        try {
+
+            /* Find the existing record in DataHub */
+            $existingRecord = DataHub::where('project', $project)
+            ->where('module', $module)
+            ->first();
+
+            if ($existingRecord) {
+                /* Find the existing record in DataHub */
+                DataHub::where('id', $existingRecord->id)->delete();
+                MetaData::where('project_id', $existingRecord->id)->delete();
+
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'Module and its data is deleted successfully',
+                ], 200); /* Status code 200 for successful deletion */
+            } else {
+                return response()->json([
+                    'status' => 400,
+                    'message' => 'Module not found',
+                ], 400); /* Status code 400 if MetaData not found */
+            }
+
+        } catch (\Exception $e) {
+            /* Handle any exceptions */
+            return response()->json([
+                'status' => 500,
+                'message' => 'Internal Server Error',
+                'error' => $e->getMessage()
+            ], 500); /* Status code 500 for internal server error */
+        }
+    }
+
+    public function deleteProject($project) {
+        try {
+
+            /* Find the existing records in DataHub */
+            $existingRecord = DataHub::where('project', $project)
+            ->get();
+
+            if ($existingRecord->isNotEmpty()) {
+                /* Loop through each record */
+                foreach ($existingRecords as $record) {
+                    DataHub::where('id', $record->id)->delete();
+                    MetaData::where('project_id', $record->id)->delete();
+                }
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'Project, Module and its data is deleted successfully',
+                ], 200); /* Status code 200 for successful deletion */
+            } else {
+                return response()->json([
+                    'status' => 400,
+                    'message' => 'Project not found',
+                ], 400); /* Status code 400 if MetaData not found */
+            }
 
         } catch (\Exception $e) {
             /* Handle any exceptions */

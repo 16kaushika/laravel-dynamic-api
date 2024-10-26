@@ -17,4 +17,8 @@ Route::prefix('api')->middleware([CustomCors::class,'api'])->group(function () {
     Route::put('{project}/{module}/{dataId}', [DataHubController::class, 'update']);
     Route::patch('{project}/{module}/{dataId}', [DataHubController::class, 'patch']);
     Route::delete('{project}/{module}/{dataId}', [DataHubController::class, 'remove']);
+
+    Route::delete('{project}', [DataHubController::class, 'deleteProject']);
+    Route::delete('{project}/{module}', [DataHubController::class, 'deleteModule']);
+
 });
