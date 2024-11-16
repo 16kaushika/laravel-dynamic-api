@@ -370,7 +370,7 @@ class DataHubController extends Controller
 
             if ($existingRecord) {
             
-                if ($existingRecord->module == 'electronic-devices') {
+                if ($existingRecord->project == 'electronic-devices') {
                     return response()->json([
                         'status' => 400,
                         'message' => "Demo Project can't be delete!",
@@ -413,7 +413,7 @@ class DataHubController extends Controller
                 /* Loop through each record */
                 foreach ($existingRecord as $record) {
 
-                    if ($record->module == 'electronic-devices') {
+                    if ($record->project == 'electronic-devices') {
                         return response()->json([
                             'status' => 400,
                             'message' => "Demo Project can't be delete!",
