@@ -373,7 +373,7 @@ class DataHubController extends Controller
                 if ($existingRecord->project == 'electronic-devices') {
                     return response()->json([
                         'status' => 400,
-                        'message' => "Demo Project can't be delete!",
+                        'message' => "Demo Module can't be delete!",
                     ], 400); /* Status code 400 if MetaData not found */
                 }
 
