@@ -369,6 +369,14 @@ class DataHubController extends Controller
             ->first();
 
             if ($existingRecord) {
+            
+                if ($existingRecord->module == 'electronic-devices') {
+                    return response()->json([
+                        'status' => 400,
+                        'message' => "Demo Project can't be delete!",
+                    ], 400); /* Status code 400 if MetaData not found */
+                }
+
                 /* Find the existing record in DataHub */
                 DataHub::where('id', $existingRecord->id)->delete();
                 MetaData::where('project_id', $existingRecord->id)->delete();
@@ -403,7 +411,15 @@ class DataHubController extends Controller
 
             if ($existingRecord->isNotEmpty()) {
                 /* Loop through each record */
-                foreach ($existingRecords as $record) {
+                foreach ($existingRecord as $record) {
+
+                    if ($record->module == 'electronic-devices') {
+                        return response()->json([
+                            'status' => 400,
+                            'message' => "Demo Project can't be delete!",
+                        ], 400); /* Status code 400 if MetaData not found */
+                    }
+
                     DataHub::where('id', $record->id)->delete();
                     MetaData::where('project_id', $record->id)->delete();
                 }
