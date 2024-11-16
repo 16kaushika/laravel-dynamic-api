@@ -941,6 +941,12 @@
                     <li>
                       <strong>Delete Data (DELETE):</strong> Remove a specific object by ID.
                     </li>
+                    <li>
+                      <strong>Delete Module (DELETE):</strong> Remove all objects associated with the specified module using the module name.                    
+                    </li>
+                    <li>
+                      <strong>Delete Project (DELETE):</strong> Remove all modules associated with the specified project using the project name.
+                    </li>
                   </ul> 
                   <br>
                 </div>

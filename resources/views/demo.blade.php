@@ -115,12 +115,16 @@
                 <label for="project-name" class="font-weight-bold">Project Name:</label>
                 <input type="text" id="project-name" placeholder="Project Name" value="electronic-devices"
                 class="form-control d-inline-block text-center w-auto ml-2 " disabled>
+                <!-- New Delete Project Button -->
+                <button id="delete-project-btn" class="btn btn-danger ml-2">Delete Project</button>
             </div>
 
             <div class="mt-2">
                 <label for="module-name" class="font-weight-bold">Module Name:</label>
                 <input type="text" id="module-name" placeholder="Module Name" value="inventory"
                 class="form-control d-inline-block text-center w-auto ml-2" disabled>
+                <!-- New Delete Module Button -->
+                <button id="delete-module-btn" class="btn btn-danger ml-2">Delete Module</button>
             </div>
 
             <!-- <button id="sync-btn" class="btn btn-secondary">Sync</button> -->
@@ -165,7 +169,7 @@ aria-labelledby="createInventoryModalLabel" aria-hidden="true">
                     You can always modify the object as needed to fit your requirements. For more details,
                     or to experiment with the API request, you can try using the <code>curl</code> request,
                     which can be found
-                    <a href="index2.html" target="_blank">here</a>.
+                    <a href="{{ route('quick-start') }}" target="_blank">here</a>.
                 </p>
             </div>
             <form id="create-invet-form">

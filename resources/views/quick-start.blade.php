@@ -926,6 +926,16 @@ d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h1
                         <span class="astro-zu3ccwit" style="--depth: 1">6. Delete Data</span>
                       </a>
                     </li>
+                    <li class="astro-zu3ccwit" style="--depth: 1">
+                      <a href="#delete-module" class="astro-zu3ccwit" style="--depth: 1">
+                        <span class="astro-zu3ccwit" style="--depth: 1">7. Delete Specific Module</span>
+                      </a>
+                    </li>
+                    <li class="astro-zu3ccwit" style="--depth: 1">
+                      <a href="#delete-project" class="astro-zu3ccwit" style="--depth: 1">
+                        <span class="astro-zu3ccwit" style="--depth: 1">8. Delete Specific Project</span>
+                      </a>
+                    </li>
                   </ul>
                 </li>
               </ul>
@@ -986,6 +996,16 @@ d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h1
                       <span class="astro-zu3ccwit" style="--depth: 1">6. Delete Data</span>
                     </a>
                   </li>
+                  <li class="astro-zu3ccwit" style="--depth: 1">
+                      <a href="#delete-module" class="astro-zu3ccwit" style="--depth: 1">
+                        <span class="astro-zu3ccwit" style="--depth: 1">7. Delete Specific Module</span>
+                      </a>
+                    </li>
+                    <li class="astro-zu3ccwit" style="--depth: 1">
+                      <a href="#delete-project" class="astro-zu3ccwit" style="--depth: 1">
+                        <span class="astro-zu3ccwit" style="--depth: 1">8. Delete Specific Project</span>
+                      </a>
+                    </li>
                 </ul>
               </li>
             </ul>
@@ -1286,6 +1306,82 @@ d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h1
       <div class="copy">
         <button title="Copy to clipboard" data-copied="Copied!"
         data-code="curl -X DELETE {{ env('APP_URL') }}/api/electronic-devices/inventory/1">
+      </button>
+    </div>
+  </figure>
+</div>
+</section>
+</starlight-tabs>
+<h3 id="delete-module">7. Delete specific Module</h3>
+<div><strong>Endpoint :</strong> <span>/electronic-devices/inventory</span></div>
+<div><strong>Method :</strong> <span>DELETE</span></div>
+<div><strong></strong></div>
+<starlight-tabs data-sync-key="pkg" class="astro-jdrv5pdc">
+
+  <section id="tab-panel-242" aria-labelledby="tab-242" role="tabpanel">
+    <div class="expressive-code">
+      <link rel="stylesheet" href="../_astro/ec.j8ofn.css" />
+      <script type="module" src="../_astro/ec.8zarh.js"></script>
+      <figure class="frame is-terminal not-content">
+        <figcaption class="header"><span class="title"></span><span class="sr-only">Terminal
+        window</span></figcaption>
+        <pre
+        data-language="sh"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">curl</span><span style="--0:#82AAFF;--1:#3C63B3"> -X DELETE </span><span style="--0:#ECC48D;--1:#3C63B3">{{ env('APP_URL') }}/api/electronic-devices/inventory</span></div></div></code></pre>
+
+        <!-- Add Try It button here -->
+
+        <div >
+          <button style="background-color: #3d50f5; color: #ffffff; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease, transform 0.2s ease; margin-top: 20px; font-weight: 600;"
+          onmouseover="this.style.backgroundColor='#3d50f5'; this.style.transform='translateY(-2px)';"
+          onmouseout="this.style.backgroundColor='#3d50f5'; this.style.transform='translateY(0px)';"
+          onmousedown="this.style.backgroundColor='#3d50f5'; this.style.transform='translateY(1px)';"
+          onmouseup="this.style.backgroundColor='#3d50f5'; this.style.transform='translateY(-2px)';"
+          onclick="window.open('{{ route('demo') . '?route=delete-data' }}', '_blank');">
+          Try It
+        </button>
+      </div>
+
+      <div class="copy">
+        <button title="Copy to clipboard" data-copied="Copied!"
+        data-code="curl -X DELETE {{ env('APP_URL') }}/api/electronic-devices/inventory">
+      </button>
+    </div>
+  </figure>
+</div>
+</section>
+</starlight-tabs>
+<h3 id="delete-project">7. Delete specific Project</h3>
+<div><strong>Endpoint :</strong> <span>/electronic-devices</span></div>
+<div><strong>Method :</strong> <span>DELETE</span></div>
+<div><strong></strong></div>
+<starlight-tabs data-sync-key="pkg" class="astro-jdrv5pdc">
+
+  <section id="tab-panel-242" aria-labelledby="tab-242" role="tabpanel">
+    <div class="expressive-code">
+      <link rel="stylesheet" href="../_astro/ec.j8ofn.css" />
+      <script type="module" src="../_astro/ec.8zarh.js"></script>
+      <figure class="frame is-terminal not-content">
+        <figcaption class="header"><span class="title"></span><span class="sr-only">Terminal
+        window</span></figcaption>
+        <pre
+        data-language="sh"><code><div class="ec-line"><div class="code"><span style="--0:#82AAFF;--1:#3C63B3">curl</span><span style="--0:#82AAFF;--1:#3C63B3"> -X DELETE </span><span style="--0:#ECC48D;--1:#3C63B3">{{ env('APP_URL') }}/api/electronic-devices</span></div></div></code></pre>
+
+        <!-- Add Try It button here -->
+
+        <div >
+          <button style="background-color: #3d50f5; color: #ffffff; padding: 10px 20px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease, transform 0.2s ease; margin-top: 20px; font-weight: 600;"
+          onmouseover="this.style.backgroundColor='#3d50f5'; this.style.transform='translateY(-2px)';"
+          onmouseout="this.style.backgroundColor='#3d50f5'; this.style.transform='translateY(0px)';"
+          onmousedown="this.style.backgroundColor='#3d50f5'; this.style.transform='translateY(1px)';"
+          onmouseup="this.style.backgroundColor='#3d50f5'; this.style.transform='translateY(-2px)';"
+          onclick="window.open('{{ route('demo') . '?route=delete-data' }}', '_blank');">
+          Try It
+        </button>
+      </div>
+
+      <div class="copy">
+        <button title="Copy to clipboard" data-copied="Copied!"
+        data-code="curl -X DELETE {{ env('APP_URL') }}/api/electronic-devices">
       </button>
     </div>
   </figure>
