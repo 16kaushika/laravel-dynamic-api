@@ -1350,7 +1350,7 @@ d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h1
 </div>
 </section>
 </starlight-tabs>
-<h3 id="delete-project">7. Delete specific Project</h3>
+<h3 id="delete-project">8. Delete specific Project</h3>
 <div><strong>Endpoint :</strong> <span>/electronic-devices</span></div>
 <div><strong>Method :</strong> <span>DELETE</span></div>
 <div><strong></strong></div>
