@@ -928,12 +928,12 @@ d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h1
                     </li>
                     <li class="astro-zu3ccwit" style="--depth: 1">
                       <a href="#delete-module" class="astro-zu3ccwit" style="--depth: 1">
-                        <span class="astro-zu3ccwit" style="--depth: 1">7. Delete Specific Module</span>
+                        <span class="astro-zu3ccwit" style="--depth: 1">7. Delete Module</span>
                       </a>
                     </li>
                     <li class="astro-zu3ccwit" style="--depth: 1">
                       <a href="#delete-project" class="astro-zu3ccwit" style="--depth: 1">
-                        <span class="astro-zu3ccwit" style="--depth: 1">8. Delete Specific Project</span>
+                        <span class="astro-zu3ccwit" style="--depth: 1">8. Delete Project</span>
                       </a>
                     </li>
                   </ul>
@@ -998,12 +998,12 @@ d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h1
                   </li>
                   <li class="astro-zu3ccwit" style="--depth: 1">
                       <a href="#delete-module" class="astro-zu3ccwit" style="--depth: 1">
-                        <span class="astro-zu3ccwit" style="--depth: 1">7. Delete Specific Module</span>
+                        <span class="astro-zu3ccwit" style="--depth: 1">7. Delete Module</span>
                       </a>
                     </li>
                     <li class="astro-zu3ccwit" style="--depth: 1">
                       <a href="#delete-project" class="astro-zu3ccwit" style="--depth: 1">
-                        <span class="astro-zu3ccwit" style="--depth: 1">8. Delete Specific Project</span>
+                        <span class="astro-zu3ccwit" style="--depth: 1">8. Delete Project</span>
                       </a>
                     </li>
                 </ul>
@@ -1312,7 +1312,7 @@ d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h1
 </div>
 </section>
 </starlight-tabs>
-<h3 id="delete-module">7. Delete specific Module</h3>
+<h3 id="delete-module">7. Delete  Module</h3>
 <div><strong>Endpoint :</strong> <span>/electronic-devices/inventory</span></div>
 <div><strong>Method :</strong> <span>DELETE</span></div>
 <div><strong></strong></div>
@@ -1336,7 +1336,7 @@ d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h1
           onmouseout="this.style.backgroundColor='#3d50f5'; this.style.transform='translateY(0px)';"
           onmousedown="this.style.backgroundColor='#3d50f5'; this.style.transform='translateY(1px)';"
           onmouseup="this.style.backgroundColor='#3d50f5'; this.style.transform='translateY(-2px)';"
-          onclick="window.open('{{ route('demo') . '?route=delete-data' }}', '_blank');">
+          onclick="window.open('{{ route('demo') . '?route=delete-Module' }}', '_blank');">
           Try It
         </button>
       </div>
@@ -1350,7 +1350,7 @@ d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h1
 </div>
 </section>
 </starlight-tabs>
-<h3 id="delete-project">8. Delete specific Project</h3>
+<h3 id="delete-project">8. Delete Project</h3>
 <div><strong>Endpoint :</strong> <span>/electronic-devices</span></div>
 <div><strong>Method :</strong> <span>DELETE</span></div>
 <div><strong></strong></div>
@@ -1374,7 +1374,7 @@ d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h1
           onmouseout="this.style.backgroundColor='#3d50f5'; this.style.transform='translateY(0px)';"
           onmousedown="this.style.backgroundColor='#3d50f5'; this.style.transform='translateY(1px)';"
           onmouseup="this.style.backgroundColor='#3d50f5'; this.style.transform='translateY(-2px)';"
-          onclick="window.open('{{ route('demo') . '?route=delete-data' }}', '_blank');">
+          onclick="window.open('{{ route('demo') . '?route=delete-project' }}', '_blank');">
           Try It
         </button>
       </div>

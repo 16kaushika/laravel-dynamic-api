@@ -271,6 +271,14 @@ aria-hidden="true">
         if (route === 'add-data') {
             showAddTooltip();
         }
+
+        if (route === 'delete-project') {
+            showDltProjectTooltip();
+        }
+
+        if (route === 'delete-Module') {
+            showDltModuleTooltip();
+        }
             // Show tooltip for "Add Inventory" button
         function showAddTooltip() {
             const addInventoryBtn = document.getElementById('add-inventory');
@@ -349,6 +357,50 @@ aria-hidden="true">
                 });
             }
 
+            // Show tooltip for "delete project" button
+            function showDltProjectTooltip() {
+                const projectDeleteBtn = document.getElementById('delete-project-btn');
+                const tooltip = document.getElementById('jumping-tooltip');
+
+                tooltip.innerHTML = 'Click here to delete project!'; // Set tooltip content
+                projectDeleteBtn.classList.add('highlighted'); // Highlight the button
+
+                // Position the tooltip near the "Add Inventory" button
+                const rect = projectDeleteBtn.getBoundingClientRect();
+                tooltip.style.top = (rect.top + window.scrollY - 60) + 'px'; // Adjust the top position above the button
+                tooltip.style.left = (rect.left + window.scrollX + (rect.width / 2) - 110) + 'px'; // Center the tooltip above the button
+                tooltip.style.display = 'block';
+
+                // Remove tooltip when button is clicked
+                projectDeleteBtn.addEventListener('click', () => {
+                    tooltip.style.display = 'none';
+                    projectDeleteBtn.classList.remove('highlighted');
+                });
+
+            }
+
+             // Show tooltip for "delete module" button
+             function showDltModuleTooltip() {
+                const moduleDeleteBtn = document.getElementById('delete-module-btn');
+                const tooltip = document.getElementById('jumping-tooltip');
+
+                tooltip.innerHTML = 'Click here to module project!'; // Set tooltip content
+                moduleDeleteBtn.classList.add('highlighted'); // Highlight the button
+
+                // Position the tooltip near the "Add Inventory" button
+                const rect = moduleDeleteBtn.getBoundingClientRect();
+                tooltip.style.top = (rect.top + window.scrollY - 60) + 'px'; // Adjust the top position above the button
+                tooltip.style.left = (rect.left + window.scrollX + (rect.width / 2) - 110) + 'px'; // Center the tooltip above the button
+                tooltip.style.display = 'block';
+
+                // Remove tooltip when button is clicked
+                moduleDeleteBtn.addEventListener('click', () => {
+                    tooltip.style.display = 'none';
+                    moduleDeleteBtn.classList.remove('highlighted');
+                });
+            }
+            
+
             setTimeout(() => {
                 loadProducts();
             }, 1000);
@@ -391,7 +443,6 @@ aria-hidden="true">
                 const device_name = $('#create-device-name').val();
                 const brand = $('#create-brand').val();
                 const price = $('#create-price').val();
-                console.log({price:price});
 
                 fetch(baseUrl, {
                     method: 'POST',
@@ -418,7 +469,6 @@ aria-hidden="true">
                 const device_name = $('#update-device-name').val();
                 const brand = $('#update-brand').val();
                 const price = $('#update-price').val();
-                console.log({price:price});
 
                 fetch(`${baseUrl}/${id}`, {
                     method: 'PUT',
@@ -468,6 +518,16 @@ aria-hidden="true">
                 }
             });
 
+            // Handle Module Delete Button Click
+            $('#delete-module-btn').on('click', function () {
+                alert("Deletion is disabled for this module as it's meant for demonstration purposes. Please create your own project to use this functionality.")
+            });
+
+            // Handle Project Delete Button Click
+            $('#delete-project-btn').on('click', function () {
+                alert("Deletion is disabled for this project as it's meant for demonstration purposes. Please create your own project to use this functionality.")
+            });
+
             // Handle View Button Click
             $('#inventoryTable tbody').on('click', '.view-button', function () {
                 const id = $(this).data('id');
@@ -479,7 +539,6 @@ aria-hidden="true">
                 fetch(`${baseUrl}/${id}`)
                 .then(response => response.json())
                 .then(data => {
-                    console.log("data.datadata.data", data.data);
                         const productDetails = data.data; // Assuming the API response has a 'data' field with the product details
                         const productDetailsList = $('#view-product-details');
 
@@ -545,7 +604,6 @@ aria-hidden="true">
                         if (route === 'update-data') {
                             // Automatically show the tooltip for the first "Update" button
                             const firstUpdateBtn = $('.update-button').first();
-                            console.log("firstUpdateBtn", firstUpdateBtn);
                             if (firstUpdateBtn.length > 0) {
                                 showUpdateTooltip(firstUpdateBtn);
                             }
