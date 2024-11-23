@@ -138,10 +138,10 @@ class DataHubController extends Controller
 
         /* Return empty response object if no projectDetail found */
         return response()->json([
-            'status' => 400, 
+            'status' => 200, 
             'message' => 'No data found',
             'data' => $responseObj
-        ],400);
+        ],200);
     }
 
 
