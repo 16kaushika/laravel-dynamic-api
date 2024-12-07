@@ -16,22 +16,23 @@ class CustomCors
      */
     public function handle(Request $request, Closure $next)
     {
-    // If the request method is OPTIONS, return a 200 response with CORS headers
+        // Handle Preflight (OPTIONS) Requests
         if ($request->isMethod('OPTIONS')) {
             return response()->json('Preflight OK', 200)
-            ->header('Access-Control-Allow-Origin', '*')
-            ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
-            ->header('Access-Control-Allow-Headers', 'Content-Type, X-Requested-With, Authorization')
-            ->header('Access-Control-Allow-Credentials', 'true');
+                ->header('Access-Control-Allow-Origin', '*')
+                ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS')
+                ->header('Access-Control-Allow-Headers', 'Content-Type, X-Requested-With, Authorization')
+                ->header('Access-Control-Allow-Credentials', 'true');
         }
 
+        // Process Other Requests and Add CORS Headers to Response
         $response = $next($request);
 
-    // Add the necessary CORS headers to the response
-    $response->headers->set('Access-Control-Allow-Origin', '*'); // Allow all origins
-    $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS'); // Allow methods
-    $response->headers->set('Access-Control-Allow-Headers', 'Content-Type, X-Requested-With, Authorization'); // Allow headers
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+        $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+        $response->headers->set('Access-Control-Allow-Headers', 'Content-Type, X-Requested-With, Authorization');
+        $response->headers->set('Access-Control-Allow-Credentials', 'true');
 
-    return $response;
-}
+        return $response;
+    }
 }
