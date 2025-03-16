@@ -20,5 +20,8 @@ Route::prefix('api')->middleware([CustomCors::class,'api'])->group(function () {
 
     Route::delete('{project}', [DataHubController::class, 'deleteProject']);
     Route::delete('{project}/{module}', [DataHubController::class, 'deleteModule']);
+    
+    Route::delete('cron/command/db/clean', [DataHubController::class, 'deleteDbRecords']);
+    Route::delete('cron/command/electronic-devices/clean', [DataHubController::class, 'deleteElectronicDevicesRecords']);
 
 });

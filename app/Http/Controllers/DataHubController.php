@@ -443,4 +443,76 @@ class DataHubController extends Controller
             ], 500); /* Status code 500 for internal server error */
         }
     }
+    
+    public function deleteDbRecords (){
+        try {
+            // Define the date 7 days ago
+            $sevenDaysAgo = Carbon::now()->subDays(7);
+
+            // Fetch all DataHub records older than 7 days
+            $dataHubRecords = DataHub::where('created_at', '<', $sevenDaysAgo)
+            ->where('project', 'electronic-devices')
+            ->where('module', 'inventory')
+            ->get();
+
+            // Check if there are any records to delete
+            if ($dataHubRecords->isEmpty()) {
+                return response()->json([
+                    'status' => 400,
+                    'message' => 'No records older than 7 days found in DataHub.',
+                ], 400); /* Status code 400 if MetaData not found */
+            }
+
+            foreach ($dataHubRecords as $record) {
+                // Delete related MetaData records for the current DataHub record
+                $deletedMetaData = MetaData::where('project_id', $record->id)
+                ->where('created_at', '<', $sevenDaysAgo)
+                ->delete();
+
+                // Delete the current DataHub record
+                $record->delete();
+            }
+
+            return response()->json([
+                'status' => 200,
+                'message' => 'Successfully deleted all records older than 7 days from Projects.',
+            ], 200); /* Status code 200 for successful deletion */
+
+        } catch (\Exception $e) {
+            /* Handle any exceptions */
+            return response()->json([
+                'status' => 500,
+                'message' => 'Internal Server Error',
+                'error' => $e->getMessage()
+            ], 500); /* Status code 500 for internal server error */
+        }
+    }
+
+    
+    public function deleteElectronicDevicesRecords (){
+        try {
+            
+            /* Find the existing record in DataHub */
+            $existingRecord = DataHub::where('project', 'electronic-devices')
+            ->where('module', 'inventory')
+            ->first();
+
+            if ($existingRecord) {
+                $deletedData = MetaData::where('project_id', $existingRecord->id)->delete();
+            }
+            
+            return response()->json([
+                'status' => 200,
+                'message' => 'Successfully deleted all records from electronic-devices.',
+            ], 200); /* Status code 200 for successful deletion */
+
+        } catch (\Exception $e) {
+            /* Handle any exceptions */
+            return response()->json([
+                'status' => 500,
+                'message' => 'Internal Server Error',
+                'error' => $e->getMessage()
+            ], 500); /* Status code 500 for internal server error */
+        }
+    }
 }
