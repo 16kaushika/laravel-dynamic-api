@@ -448,34 +448,15 @@ class DataHubController extends Controller
     public function deleteDbRecords (){
         try {
             // Define the date 7 days ago
-            $sevenDaysAgo = Carbon::now()->subDays(7);
+            $sevenDaysAgo = Carbon::now()->subDays(7)->format('Y-m-d H:i:s');
 
-            // Fetch all DataHub records older than 7 days
-            $dataHubRecords = DataHub::where('created_at', '<', $sevenDaysAgo)
-            ->where('project', 'electronic-devices')
-            ->where('module', 'inventory')
-            ->get();
-
-            // Check if there are any records to delete
-            if ($dataHubRecords->isEmpty()) {
-                return response()->json([
-                    'status' => 400,
-                    'message' => 'No records older than 7 days found in DataHub.',
-                ], 400); /* Status code 400 if MetaData not found */
-            }
-
-            foreach ($dataHubRecords as $record) {
-                // Delete related MetaData records for the current DataHub record
-                $deletedMetaData = MetaData::where('project_id', $record->id)
-                ->where('created_at', '<', $sevenDaysAgo)
-                ->delete();
-
-                // Delete the current DataHub record
-                $record->delete();
-            }
+            // Delete all DataHub records older than 7 days
+            DataHub::where('created_at', '<', $sevenDaysAgo)->delete();
+            MetaData::where('created_at', '<', $sevenDaysAgo)->delete();
 
             return response()->json([
                 'status' => 200,
+                'sevenDaysAgo' => $sevenDaysAgo,
                 'message' => 'Successfully deleted all records older than 7 days from Projects.',
             ], 200); /* Status code 200 for successful deletion */
 
